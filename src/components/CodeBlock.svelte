@@ -1,12 +1,18 @@
-<script>
-    import hljs from 'highlight.js'
+<script lang="ts">
+      import Highlight from "svelte-highlight";
+      import { LineNumbers } from "svelte-highlight";
+        import swift from "svelte-highlight/languages/swift";
+        import githubDark from "svelte-highlight/styles/github-dark";
 
-    //TODO: make this work
-    hljs.highlightAll()
+    const code = 'let programmer = "David"\nfunc doThings() { \nprint("Fun!")\n }'
 </script>
 
+<svelte:head>
+  {@html githubDark}
+</svelte:head>
+
 <div class="mockup-code">
-    <pre data-prefix="$"><code>npm i daisyui</code></pre> 
-    <pre data-prefix=">"><code>installing...</code></pre> 
-    <pre data-prefix=">"><code>Done!</code></pre>
+    <Highlight language={swift} {code} let:highlighted>
+        <LineNumbers {highlighted} />
+    </Highlight>
 </div>
