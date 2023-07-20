@@ -1,20 +1,17 @@
 <script lang="ts">
   import Highlight, { LineNumbers } from "svelte-highlight";
   import githubDark from "svelte-highlight/styles/github-dark";
-  import { codeSamples } from "$lib/codeSamples";
-  import { typescript, type LanguageType } from "svelte-highlight/languages";
+  import { languages } from "$lib/codeSamples";
 
-  export let code = codeSamples.typescript
-  //TODO: refactor codeSamples
-  $: language = typescript
+  export let lang = languages.typescript
 </script>
 
 <svelte:head>
   {@html githubDark}
 </svelte:head>
 
-<div class="mockup-code">
-    <Highlight language={language} {code} let:highlighted>
+<div class="mockup-code col-span-2">
+    <Highlight language={lang.languageType} code={lang.codeSample} let:highlighted>
         <LineNumbers {highlighted} />
     </Highlight>
 </div>

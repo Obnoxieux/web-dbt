@@ -1,5 +1,9 @@
-export const codeSamples = {
-    swift: 
+import { kotlin, php, swift, typescript } from "svelte-highlight/languages";
+
+export const languages = {
+    swift: {
+        languageType: swift,
+        codeSample: 
 `class SoftwareEngineer {
     let name: String
     let specialty: String
@@ -20,9 +24,12 @@ export const codeSamples = {
 }
 
 let me = SoftwareEngineer(name: "David", specialty: "Web and Mobile Applications")
-let awesomeApp = me.createAwesomeApp(ideas: ["your", "ideas", "here"], caffeine: "2 cups of Mate")`,
-
-    kotlin:
+let awesomeApp = me.createAwesomeApp(ideas: ["your", "ideas", "here"], 
+caffeine: "2 cups of Mate")`,
+    }, 
+    kotlin: {
+        languageType: kotlin,
+        codeSample:
 `class SoftwareEngineer(name: String, specialty: String) {
 
     fun createAwesomeApp(ideas: List<String>, caffeine: Any): List<Any> {
@@ -37,10 +44,13 @@ let awesomeApp = me.createAwesomeApp(ideas: ["your", "ideas", "here"], caffeine:
 
 fun main() {
     val me = SoftwareEngineer("David", "Web and Mobile Applications")
-    val awesomeApp = me.createAwesomeApp(listOf("your", "ideas", "here"), "2 cups of Mate")
+    val awesomeApp = me.createAwesomeApp(listOf("your", "ideas", "here"),
+    "2 cups of Mate")
 }`,
-
-    typescript:
+    },
+    typescript: {
+        languageType: typescript,
+        codeSample:
 `class SoftwareEngineer {
     constructor(
         name: string, specialty: string
@@ -57,8 +67,10 @@ fun main() {
 }
 const me = new SoftwareEngineer("David", "Web and Mobile Applications")
 const awesomeApp = me.createAwesomeApp(["your", "ideas", "here"], "2 cups of Mate")`,
-
-    php:
+    },
+    php: {
+        languageType: php,
+        codeSample:
 `class SoftwareEngineer {
     private $name;
     private $specialty;
@@ -80,4 +92,5 @@ const awesomeApp = me.createAwesomeApp(["your", "ideas", "here"], "2 cups of Mat
 
 $me = new SoftwareEngineer("David", "Web and Mobile Applications");
 $awesomeApp = $me->createAwesomeApp(["your", "ideas", "here"], "2 cups of Mate");`,
+    }
 }
