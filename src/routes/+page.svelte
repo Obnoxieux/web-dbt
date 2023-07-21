@@ -1,5 +1,5 @@
 <script>
-    import CodeExampleSection from "../components/CodeExampleSection.svelte";
+    import CodeExampleSection from "../components/home/CodeExampleSection.svelte";
 </script>
 
 <div class="hero min-h-full bg-base-200 p-5 md:p-20 rounded-lg border-2 border-primary mb-4">

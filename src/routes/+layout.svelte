@@ -1,7 +1,7 @@
 <script>
     import "../app.css";
-    import Navbar from '../components/Navbar.svelte';
-    import Footer from "../components/Footer.svelte";
+    import Navbar from '../components/core/Navbar.svelte';
+    import Footer from "../components/core/Footer.svelte";
 </script>
 
 <div class="flex justify-center flex-col mx-auto  max-w-[95%] md:max-w-[85%] xl:max-w-[75%]">
