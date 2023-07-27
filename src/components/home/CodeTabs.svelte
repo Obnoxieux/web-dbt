@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Language } from "$lib/Language";
+  import { Language } from "$lib/enums/Language";
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher()

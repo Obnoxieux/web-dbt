@@ -1,7 +1,7 @@
 <script lang="ts">
     import CodeTabs from "./CodeTabs.svelte";
     import CodeBlock from "./CodeBlock.svelte";
-    import { Language } from "$lib/Language";
+    import { Language } from "$lib/enums/Language";
     import { languages } from "$lib/codeSamples";
 
     let lang: any = languages.typescript
