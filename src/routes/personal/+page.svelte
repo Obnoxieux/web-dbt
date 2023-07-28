@@ -12,4 +12,7 @@
 <div class="divider"></div>
 <BaseballTeaser/>
 <div class="divider"></div>
-<BaseballStatsSection itemBatting="{data.itemBatting}"/>
+<BaseballStatsSection
+        statsBatting="{data.stats.batting}"
+        statsPitching="{data.stats.pitching}"
+/>

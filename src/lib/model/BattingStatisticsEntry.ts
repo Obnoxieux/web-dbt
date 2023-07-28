@@ -1,12 +1,32 @@
-export interface BattingStatisticsEntry {
+import type {AbstractStatisticsEntry} from "$lib/model/AbstractStatisticsEntry";
+import type {Club} from "$lib/model/Club";
+
+export interface BattingStatisticsEntry extends AbstractStatisticsEntry {
+    data: BattingStatisticsData[]
     summaries: BattingStatsSummary[]
 }
 
 interface BattingStatsSummary {
-    values: BattingSummaryValues
+    values: BattingStatisticValues
 }
 
-interface BattingSummaryValues {
+interface BattingStatisticsData {
+    club: Club;
+    league: {
+        id: number;
+        type: string;
+        name: string;
+        acronym: string;
+        sport: string;
+        sort: number;
+        season: number;
+        age_group: string;
+    };
+    type: string;
+    values: BattingStatisticValues;
+}
+
+interface BattingStatisticValues {
     type: string;
     games: number;
     games_started: number;
