@@ -1,9 +1,8 @@
 <script lang="ts">
-    //import {BSMAPIRequest} from "$lib/classes/BSMAPIRequest";
-    import {StatsType} from "$lib/enums/StatsType";
+    import type {BaseballStatisticsEntry} from "$lib/model/BaseballStatisticsEntry";
 
-    //const request = new BSMAPIRequest()
-    //let stats = request.loadPersonalStatistics(StatsType.batting)
+    export let itemBatting: BaseballStatisticsEntry;
 </script>
 
-<p>bogus</p>
+<p>{itemBatting.summaries[0].values.batting_average}</p>
+<p>{itemBatting.summaries[0].values.hits}</p>

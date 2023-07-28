@@ -2,7 +2,6 @@ import {AbstractAPIRequest} from "$lib/classes/AbstractAPIRequest";
 import type {StatsType} from "$lib/enums/StatsType";
 import type {BaseballStatisticsEntry} from "$lib/model/BaseballStatisticsEntry";
 
-//TODO: make work
 export class BSMAPIRequest extends AbstractAPIRequest {
     API_URL = "https://bsm.baseball-softball.de"
     protected readonly bsmPersonID: number = 76222
@@ -17,7 +16,6 @@ export class BSMAPIRequest extends AbstractAPIRequest {
         // }
 
         const url = `${this.API_URL}/people/${this.bsmPersonID}/statistics/${statsType}.json?filters[seasons][]=${currentSeason}`
-        console.log(url)
         return url
     }
 

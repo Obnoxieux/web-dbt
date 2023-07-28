@@ -1,6 +1,8 @@
 <script lang="ts">
     import BaseballTeaser from "../../components/personal/BaseballTeaser.svelte";
     import BaseballStatsSection from "../../components/personal/BaseballStatsSection.svelte";
+
+    export let data;
 </script>
 
 <div class="prose">
@@ -10,4 +12,4 @@
 <div class="divider"></div>
 <BaseballTeaser/>
 <div class="divider"></div>
-<BaseballStatsSection/>
+<BaseballStatsSection itemBatting="{data.itemBatting}"/>
