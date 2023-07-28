@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type {BaseballStatisticsEntry} from "$lib/model/BaseballStatisticsEntry";
+    import type {BattingStatisticsEntry} from "$lib/model/BattingStatisticsEntry";
 
-    export let itemBatting: BaseballStatisticsEntry;
+    export let itemBatting: BattingStatisticsEntry;
 </script>
 
 <p>{itemBatting.summaries[0].values.batting_average}</p>

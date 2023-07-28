@@ -1,5 +1,3 @@
-import type {BaseballStatisticsEntry} from "$lib/model/BaseballStatisticsEntry";
-
 export abstract class AbstractAPIRequest {
     protected readonly API_URL: string = ""
 

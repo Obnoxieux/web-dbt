@@ -1,12 +1,12 @@
-export interface BaseballStatisticsEntry {
-    summaries: StatsSummary[]
+export interface BattingStatisticsEntry {
+    summaries: BattingStatsSummary[]
 }
 
-interface StatsSummary {
-    values: SummaryValues
+interface BattingStatsSummary {
+    values: BattingSummaryValues
 }
 
-interface SummaryValues {
+interface BattingSummaryValues {
     type: string;
     games: number;
     games_started: number;
