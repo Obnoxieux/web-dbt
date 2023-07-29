@@ -1,7 +1,7 @@
 import type {Club} from "$lib/model/Club";
 import type {AbstractStatisticsEntry} from "$lib/model/AbstractStatisticsEntry";
 
-export interface PitchingStatisticsEntry extends AbstractStatisticsEntry{
+export interface PitchingStatisticsEntry extends AbstractStatisticsEntry {
     data: PitchingStatisticsData[];
     summaries: PitchingStatisticSummary[];
 }

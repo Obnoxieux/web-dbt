@@ -16,8 +16,7 @@ export class BSMAPIRequest extends AbstractAPIRequest {
         //     searchTerm = `&search=${search}`
         // }
 
-        const url = `${this.API_URL}/people/${this.bsmPersonID}/statistics/${statsType}.json?filters[seasons][]=${selectedSeason}`
-        return url
+        return `${this.API_URL}/people/${this.bsmPersonID}/statistics/${statsType}.json?filters[seasons][]=${selectedSeason}`
     }
 
     async loadPersonalStatistics(statsType: StatsType, season?: number): Promise<AbstractStatisticsEntry> {
