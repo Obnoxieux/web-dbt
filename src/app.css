@@ -5,3 +5,15 @@
 .hljs {
 	background-color: hsl(var(--n) / var(--tw-bg-opacity)) !important;
 }
+
+.h1 {
+	@apply text-3xl sm:text-4xl font-extrabold;
+}
+
+.h2 {
+	@apply text-xl sm:text-2xl font-extrabold;
+}
+
+.subheader {
+	@apply font-semibold  text-xl;
+}

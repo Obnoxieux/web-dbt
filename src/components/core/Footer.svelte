@@ -1,6 +1,6 @@
-<footer class="footer items-center p-4 bg-base-200 text-base-content mt-10 rounded-md">
+<footer class="footer items-center p-4 bg-base-200 text-base-content mt-10 rounded-md mb-6">
     <div class="items-center grid-flow-col">
-      <p>🄯 dbt - Made with <span class="text-accent">♥</span> in Berlin</p>
+      <p>Made with <span class="text-accent">♥</span> in Berlin</p>
     </div> 
     <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
       <a href="https://github.com/Obnoxieux" target="_blank">

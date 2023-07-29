@@ -1,6 +1,7 @@
 <script lang="ts">
     import BaseballTeaser from "../../components/personal/BaseballTeaser.svelte";
     import BaseballStatsSection from "../../components/personal/BaseballStatsSection.svelte";
+    import TeamHeroSection from "../../components/personal/TeamHeroSection.svelte";
 
     export let data;
 </script>
@@ -16,3 +17,5 @@
         statsBatting="{data.stats.batting}"
         statsPitching="{data.stats.pitching}"
 />
+<div class="divider my-8"></div>
+<TeamHeroSection/>
