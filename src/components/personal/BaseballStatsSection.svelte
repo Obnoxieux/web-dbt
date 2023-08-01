@@ -3,6 +3,7 @@
     import type {PitchingStatisticsEntry} from "$lib/model/PitchingStatisticsEntry";
     import {StatsType} from "$lib/enums/StatsType";
     import BattingStats from "./BattingStats.svelte";
+    import PitchingStats from "./PitchingStats.svelte";
 
     export let statsBatting: BattingStatisticsEntry;
     export let statsPitching: PitchingStatisticsEntry
@@ -28,7 +29,7 @@
     {#if activeStatsTab === StatsType.batting}
         <BattingStats {statsBatting}/>
     {:else if activeStatsTab === StatsType.pitching}
-        <p>{statsPitching.summaries[0].values.type}</p>
+        <PitchingStats {statsPitching}/>
     {:else}
         <p>Fielding Stats</p>
     {/if}
