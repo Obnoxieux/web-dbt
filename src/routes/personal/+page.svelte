@@ -16,6 +16,7 @@
 <BaseballStatsSection
         statsBatting="{data.stats.batting}"
         statsPitching="{data.stats.pitching}"
+        statsFielding="{data.stats.fielding}"
 />
 <div class="divider my-8"></div>
 <TeamHeroSection/>
