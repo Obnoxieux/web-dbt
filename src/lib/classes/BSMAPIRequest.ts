@@ -1,6 +1,5 @@
 import {AbstractAPIRequest} from "$lib/classes/AbstractAPIRequest";
 import type {StatsType} from "$lib/enums/StatsType";
-import type {BattingStatisticsEntry} from "$lib/model/BattingStatisticsEntry";
 import type {AbstractStatisticsEntry} from "$lib/model/AbstractStatisticsEntry";
 
 export class BSMAPIRequest extends AbstractAPIRequest {
@@ -21,8 +20,8 @@ export class BSMAPIRequest extends AbstractAPIRequest {
 
     async loadPersonalStatistics(statsType: StatsType, season?: number): Promise<AbstractStatisticsEntry> {
         const url = this.buildURL(statsType, season)
-        const response = await this.fetchJSONData(url)
+        const response = await this.fetchJSONData(url, undefined)
 
-        return response as BattingStatisticsEntry
+        return response as AbstractStatisticsEntry
     }
 }

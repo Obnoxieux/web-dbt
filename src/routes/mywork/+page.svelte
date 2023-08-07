@@ -1,5 +1,6 @@
 <script>
     import TechStackSection from "../../components/projects/TechStackSection.svelte";
+    import ProjectsHeroTeaser from "../../components/projects/ProjectsHeroTeaser.svelte";
 </script>
 
 <div class="prose">
@@ -9,3 +10,4 @@
 <div class="divider"></div>
 <TechStackSection/>
 <div class="divider"></div>
+<ProjectsHeroTeaser/>
