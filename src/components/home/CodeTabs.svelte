@@ -14,9 +14,13 @@
   }
 </script>
 
-<div class="tabs tabs-boxed my-8">
-  <button on:click={() => changeLanguage(Language.typescript)} class="tab tab-lg {activeTab === Language.typescript ? 'tab-active' : ''}">TypeScript</button>
-  <button on:click={() => changeLanguage(Language.swift)} class="tab tab-lg {activeTab === Language.swift ? 'tab-active' : ''}">Swift</button>
-  <button on:click={() => changeLanguage(Language.kotlin)} class="tab tab-lg {activeTab === Language.kotlin ? 'tab-active' : ''}">Kotlin</button>
-  <button on:click={() => changeLanguage(Language.php)} class="tab tab-lg {activeTab === Language.php ? 'tab-active' : ''}">PHP</button>
+<div class="flex max-w-[90%]">
+  <div class="tabs tabs-bordered my-8 border-2 rounded-lg">
+    <div class="grid grid-cols-2 xl:grid-cols-4 pl-2">
+      <button on:click={() => changeLanguage(Language.typescript)} class="tab tab-lg {activeTab === Language.typescript ? 'tab-active' : ''}">TypeScript</button>
+      <button on:click={() => changeLanguage(Language.swift)} class="tab tab-lg {activeTab === Language.swift ? 'tab-active' : ''}">Swift</button>
+      <button on:click={() => changeLanguage(Language.kotlin)} class="tab tab-lg {activeTab === Language.kotlin ? 'tab-active' : ''}">Kotlin</button>
+      <button on:click={() => changeLanguage(Language.php)} class="tab tab-lg {activeTab === Language.php ? 'tab-active' : ''}">PHP</button>
+    </div>
+  </div>
 </div>

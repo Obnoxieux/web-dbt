@@ -24,7 +24,7 @@
     }
 </script>
 
-<div class="card lg:card-side w-full bg-base-200 border-2 border-secondary shadow-xl my-4">
+<div class="card lg:card-side w-full bg-base-200 border-2 border-neutral-content shadow-xl my-4">
     <div class="card-body">
         <div class="grid grid-cols-1 lg:grid-cols-3 items-center">
             <div>
