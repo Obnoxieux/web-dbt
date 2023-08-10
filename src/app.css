@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--color-swift: #3B82F6;
+}
+
 .hljs {
 	background-color: hsl(var(--n) / var(--tw-bg-opacity)) !important;
 }
@@ -16,4 +20,9 @@
 
 .subheader {
 	@apply font-semibold  text-xl;
+}
+
+.badge-outline.badge-swift {
+	--tw-text-opacity: 1;
+	color: var(--color-swift);
 }
