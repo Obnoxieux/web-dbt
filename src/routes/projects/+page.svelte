@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ProjectCard from "../../../components/projects/ProjectCard.svelte";
+    import ProjectCard from "../../components/projects/ProjectCard.svelte";
 
     export let data;
 </script>

@@ -1,4 +1,4 @@
-import type {PageServerLoad} from "../../../../.svelte-kit/types/src/routes/mywork/projects/$types";
+import type {PageServerLoad} from "../../../.svelte-kit/types/src/routes/mywork/projects/$types";
 import {GitHubAPIRequest} from "$lib/classes/GitHubAPIRequest";
 import type {GitHubRepo} from "$lib/model/GitHubRepo";
 
