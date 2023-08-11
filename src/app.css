@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 :root {
+	/* Tailwind Blue-500 */
 	--color-swift: #3B82F6;
+	/* Tailwind Emerald-400 */
+	--color-kotlin: #34d399;
+	/* Tailwind Orange-600 */
+	--color-typescript: #ea580c;
+	/* Tailwind Amber-500 */
+	--color-php: #f59e0b;
 }
 
 .hljs {
@@ -25,4 +32,19 @@
 .badge-outline.badge-swift {
 	--tw-text-opacity: 1;
 	color: var(--color-swift);
+}
+
+.badge-outline.badge-kotlin {
+	--tw-text-opacity: 1;
+	color: var(--color-kotlin);
+}
+
+.badge-outline.badge-typescript {
+	--tw-text-opacity: 1;
+	color: var(--color-typescript);
+}
+
+.badge-outline.badge-php {
+	--tw-text-opacity: 1;
+	color: var(--color-php);
 }

@@ -7,8 +7,14 @@
         switch (language) {
             case "Swift":
                 return "swift"
+            case "Kotlin":
+                return "kotlin"
+            case "Svelte":
+                return "typescript"
+            case "TypeScript":
+                return "typescript"
             default:
-                return "secondary"
+                return "neutral"
         }
     }
 </script>
@@ -19,7 +25,7 @@
         <p>{repo.description}</p>
         <div class="card-actions justify-between items-center">
             <div class="badge badge-lg badge-outline badge-{determineColor(repo.language)}">{repo.language}</div>
-            <a href="#" class="btn btn-outline btn-accent">Details</a>
+            <a href="#" class="btn btn-outline">Details</a>
         </div>
     </div>
 </div>
