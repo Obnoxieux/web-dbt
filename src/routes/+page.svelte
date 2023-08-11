@@ -18,7 +18,7 @@
           <h2 class="card-title">My Work</h2>
           <p>Technologies, frameworks and what I build with them</p>
           <div class="card-actions justify-end">
-            <a href="/mywork" class="btn btn-primary">Go to section</a>
+            <a href="/tech" class="btn btn-primary">Go to section</a>
           </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
           <h2 class="card-title">Open source contributions</h2>
           <p>Giving back to the Open Source and Free Software communities</p>
           <div class="card-actions justify-end">
-            <a href="/foss" class="btn btn-secondary">Go to section</a>
+            <a href="/tech/foss" class="btn btn-secondary">Go to section</a>
           </div>
         </div>
     </div>
