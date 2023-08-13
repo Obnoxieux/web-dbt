@@ -23,22 +23,34 @@
     }
 </script>
 
-<h1 class="h1 mb-5 lg:mb-8">My Projects</h1>
-<div class="flex flex-wrap mb-5 md:mb-10 gap-2 md:gap-4 items-center">
-    <div class="h2">Filter by Language:</div>
-    {#each filters as filter}
-        <button
-            on:click={() => toggleFilter(filter)}
-            class="filter-button btn btn-sm md:btn-md"
-            class:btn-neutral={filter === shownLanguage}
-            class:btn-outline={filter !== shownLanguage}
-        >
-            {filter}
-        </button>
-    {/each}
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-9">
-    {#each filteredRepos as repo}
-        <ProjectCard {repo}/>
-    {/each}
-</div>
+<section id="project-teaser" class="mb-4 mt-2 flex flex-col gap-2">
+    <h1 class="font-semibold mb-2 text-xl text-primary">My Projects</h1>
+    <p class="text-3xl sm:text-4xl font-extrabold">Discover my work</p>
+    <div class="mt-4 max-w-3xl space-y-6">
+        <p>
+            All projects on this page are loaded via the GitHub API from my personal profile and therefore always up-to-date.
+            Links to the GitHub repository are provided on the detail page. Feel free to contribute and/or roast my code.
+        </p>
+    </div>
+</section>
+<div class="divider my-5"></div>
+<section id="project-examples">
+    <div class="flex flex-wrap mb-5 md:mb-10 gap-2 md:gap-4 items-center">
+        <div class="h2">Filter by Language:</div>
+        {#each filters as filter}
+            <button
+                    on:click={() => toggleFilter(filter)}
+                    class="filter-button btn btn-sm md:btn-md"
+                    class:btn-neutral={filter === shownLanguage}
+                    class:btn-outline={filter !== shownLanguage}
+            >
+                {filter}
+            </button>
+        {/each}
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-9">
+        {#each filteredRepos as repo}
+            <ProjectCard {repo}/>
+        {/each}
+    </div>
+</section>
