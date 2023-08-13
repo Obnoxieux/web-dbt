@@ -48,3 +48,23 @@
 	--tw-text-opacity: 1;
 	color: var(--color-php);
 }
+
+.btn-outline.btn-swift {
+	--tw-text-opacity: 1;
+	color: var(--color-swift);
+}
+
+.btn-outline.btn-kotlin {
+	--tw-text-opacity: 1;
+	color: var(--color-kotlin);
+}
+
+.btn-outline.btn-typescript {
+	--tw-text-opacity: 1;
+	color: var(--color-typescript);
+}
+
+.btn-outline.btn-php {
+	--tw-text-opacity: 1;
+	color: var(--color-php);
+}
