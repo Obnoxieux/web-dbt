@@ -1,11 +1,10 @@
-import type {PageServerLoad} from "../../../.svelte-kit/types/src/routes/projects/$types";
 import {GitHubAPIRequest} from "$lib/classes/GitHubAPIRequest";
 import type {GitHubRepo} from "$lib/model/GitHubRepo";
+import type {PageServerLoad} from "../../../../.svelte-kit/types/src/routes/projects/[slug]/$types";
 
 export const load = (async ({params}) => {
     const request = new GitHubAPIRequest()
 
-    const repos: GitHubRepo[] = await request.loadRepositoriesForUser(request.githubUsername, "users")
-
-    return {repos}
+    const repo: GitHubRepo = await request.loadSingleRepository(request.githubUsername, "repos", params.slug)
+    return {repo}
 }) satisfies PageServerLoad
