@@ -1,7 +1,12 @@
 <footer class="footer items-center p-4 bg-base-200 text-base-content mt-10 rounded-md mb-6">
     <div class="items-center grid-flow-col">
       <p>Made with <span class="text-accent">♥</span> in Berlin</p>
-    </div> 
+    </div>
+    <section id="legal-docs" class="flex">
+        <a href="/impressum">Impressum</a>
+        <p class="mx-3">|</p>
+        <a href="/privacy">Datenschutzerklärung</a>
+    </section>
     <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
       <a href="https://github.com/Obnoxieux" target="_blank">
         <svg height="32" aria-hidden="true" viewBox="0 0 16 16" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
