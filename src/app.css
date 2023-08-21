@@ -29,6 +29,10 @@
 	@apply font-semibold  text-xl;
 }
 
+.hero {
+	@apply min-h-[35%];
+}
+
 .badge-outline.badge-swift {
 	--tw-text-opacity: 1;
 	color: var(--color-swift);

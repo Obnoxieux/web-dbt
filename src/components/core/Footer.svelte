@@ -1,4 +1,4 @@
-<footer class="footer items-center p-4 bg-base-200 text-base-content mt-10 rounded-md mb-6">
+<footer class="footer justify-between items-center p-4 bg-base-200 text-base-content mt-5 rounded-md mb-6">
     <div class="items-center grid-flow-col">
       <p>Made with <span class="text-accent">♥</span> in Berlin</p>
     </div>
