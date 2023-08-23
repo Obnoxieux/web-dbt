@@ -12,7 +12,7 @@ export class ColorUtility {
             case "PHP":
                 return "php"
             default:
-                return "neutral"
+                return "outline"
         }
     }
 }

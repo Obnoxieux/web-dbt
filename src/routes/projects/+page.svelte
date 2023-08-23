@@ -24,7 +24,7 @@
 </script>
 
 <section id="project-teaser" class="mb-4 mt-2 flex flex-col gap-2">
-    <h1 class="font-semibold mb-2 text-xl text-primary">My Projects</h1>
+    <h1 class="font-semibold mb-2 text-xl text-typescript">My Projects</h1>
     <p class="text-3xl sm:text-4xl font-extrabold">Discover my work</p>
     <div class="mt-4 max-w-3xl space-y-6">
         <p>
