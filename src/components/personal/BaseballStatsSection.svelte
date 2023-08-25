@@ -41,6 +41,6 @@
 
 <style>
     .tabs-boxed .tab-active:not(.tab-disabled):not([disabled]) {
-        @apply bg-yellow-400 text-black;
+        @apply bg-[#ba0c2f] text-white;
     }
 </style>

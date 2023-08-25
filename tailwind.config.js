@@ -12,7 +12,40 @@ export default {
     },
   },
   daisyui: {
-    themes: false
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          "primary": "#c2410c",
+          "primary-focus": "#9a3412",
+          "secondary": "#047857",
+          "secondary-focus": "#065f46",
+          "secondary-content": "#f3f4f6",
+          "accent": "#2563eb",
+          "accent-focus": "#1d4ed8",
+          "accent-content": "#f3f4f6",
+          "warning": "#d97706",
+          "warning-focus": "#b45309",
+          "warning-content": "#ffffff",
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          "primary": "#ea580c",
+          "primary-focus": "#c2410c",
+          "secondary": "#34d399",
+          "secondary-focus": "#10b981",
+          "secondary-content": "#111827",
+          "accent": "#3B82F6",
+          "accent-focus": "#2563eb",
+          "accent-content": "#f3f4f6",
+          "warning": "#f59e0b",
+          "warning-focus": "#d97706",
+          "warning-content": "#111827",
+        }
+      }
+    ],
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 }

@@ -4,7 +4,7 @@
         <div>
             <h2 class="h2 font-bold">Projects</h2>
             <p class="py-6">My small portfolio of things I built using those technologies. Updates automatically via API request from my GitHub profile.</p>
-            <a class="btn btn-accent" href="/projects">Go to Section</a>
+            <a class="btn btn-secondary" href="/projects">Go to Section</a>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <footer class="footer justify-between items-center p-4 bg-base-200 text-base-content mt-5 rounded-md mb-6">
     <div class="items-center grid-flow-col">
-      <p>Made with <span class="text-typescript">♥</span> in Berlin</p>
+      <p>Made with <span class="text-primary">♥</span> in Berlin</p>
     </div>
     <section id="legal-docs" class="flex">
         <a href="/impressum">Impressum</a>

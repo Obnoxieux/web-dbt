@@ -19,7 +19,7 @@
                 <option>Other</option>
             </select>
             <textarea name="message" class="textarea textarea-bordered lg:max-w-[70%]" placeholder="Your message"></textarea>
-            <button type="submit" class="btn btn-primary lg:max-w-[70%]">Send Message</button>
+            <button type="submit" class="btn btn-warning lg:max-w-[70%]">Send Message</button>
         </div>
     </form>
 {:else}

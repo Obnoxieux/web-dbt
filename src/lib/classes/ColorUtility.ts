@@ -2,17 +2,17 @@ export class ColorUtility {
     static determineColor(language: string): string {
         switch (language) {
             case "Swift":
-                return "swift"
+                return "accent"
             case "Kotlin":
-                return "kotlin"
+                return "secondary"
             case "Svelte":
-                return "typescript"
+                return "primary"
             case "TypeScript":
-                return "typescript"
+                return "primary"
             case "PHP":
-                return "php"
+                return "warning"
             default:
-                return "outline"
+                return "warning"
         }
     }
 }

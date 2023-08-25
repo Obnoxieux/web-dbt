@@ -6,7 +6,7 @@
     const updatedDate = new Date(repo.updated_at).toLocaleString()
 </script>
 
-<h2 class="subheader col-span-4 mb-6 text-typescript">General Info</h2>
+<h2 class="subheader col-span-4 mb-6 text-primary">General Info</h2>
 <section id="project-stats" class="grid grid-cols-4 gap-6 border-2 border-neutral-content rounded-2xl shadow-xl p-4 lg:p-5 xl:p-7">
     <div class="mini-headline">Language</div>
     <div class="col-span-3">{repo.language}</div>
