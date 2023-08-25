@@ -9,7 +9,7 @@
         </label>
     </div>
     <div class="hidden lg:block">
-        <ul class="menu menu-horizontal">
+        <ul class="menu menu-horizontal gap-5">
             <NavbarLinks/>
         </ul>
     </div>

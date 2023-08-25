@@ -33,6 +33,10 @@
 	@apply min-h-[35%];
 }
 
+.mini-headline {
+	@apply font-extrabold;
+}
+
 .badge-outline.badge-swift {
 	--tw-text-opacity: 1;
 	color: var(--color-swift);
