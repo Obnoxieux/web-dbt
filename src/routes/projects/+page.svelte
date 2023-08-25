@@ -1,6 +1,7 @@
 <script lang="ts">
     import ProjectCard from "../../components/projects/ProjectCard.svelte";
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
+    import {ColorUtility} from "$lib/classes/ColorUtility";
 
     export let data;
     let shownLanguage: string = "All"
@@ -50,7 +51,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-9">
         {#each filteredRepos as repo}
-            <ProjectCard {repo}/>
+            <ProjectCard {repo} color="{ColorUtility.determineColor(repo.language)}"/>
         {/each}
     </div>
 </section>

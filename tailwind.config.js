@@ -18,6 +18,7 @@ export default {
           ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           "primary": "#c2410c",
           "primary-focus": "#9a3412",
+          "primary-content": "#ffffff",
           "secondary": "#047857",
           "secondary-focus": "#065f46",
           "secondary-content": "#f3f4f6",

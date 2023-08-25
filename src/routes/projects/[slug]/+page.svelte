@@ -2,14 +2,16 @@
     import ProjectDetailIntro from "../../../components/projects/ProjectDetailIntro.svelte";
     import ProjectDetailMainContainer from "../../../components/projects/ProjectDetailMainContainer.svelte";
     import ProjectDetailLinkSection from "../../../components/projects/ProjectDetailLinkSection.svelte";
+    import {ColorUtility} from "$lib/classes/ColorUtility";
 
     export let data
+    const color = ColorUtility.determineColor(data.repo.language)
 </script>
 
 <div class="flex flex-col gap-3">
     <ProjectDetailIntro repo="{data.repo}"/>
     <div class="divider"></div>
-    <ProjectDetailMainContainer repo="{data.repo}"/>
+    <ProjectDetailMainContainer repo="{data.repo}" {color}/>
     <div class="divider col-span-4"></div>
-    <ProjectDetailLinkSection repo="{data.repo}"/>
+    <ProjectDetailLinkSection repo="{data.repo}" {color}/>
 </div>
