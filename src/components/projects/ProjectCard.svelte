@@ -7,7 +7,7 @@
     export let color: string
 </script>
 
-<div class="card w-full bg-base-200 border-2 border-neutral-content shadow-xl">
+<div class="card w-full h-full bg-base-200 border-2 border-neutral-content shadow-xl">
     <div class="card-body">
         <h2 class="card-title">{repo.name}</h2>
         <p>{repo.description}</p>

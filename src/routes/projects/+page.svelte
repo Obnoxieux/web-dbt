@@ -2,6 +2,8 @@
     import ProjectCard from "../../components/projects/ProjectCard.svelte";
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
     import {ColorUtility} from "$lib/classes/ColorUtility";
+    import {fly} from "svelte/transition";
+    import {cubicOut} from "svelte/easing";
 
     export let data;
     let shownLanguage: string = "All"
@@ -49,9 +51,13 @@
             </button>
         {/each}
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-9">
-        {#each filteredRepos as repo}
-            <ProjectCard {repo} color="{ColorUtility.determineColor(repo.language)}"/>
+    <div class="grid auto-rows-max grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-9">
+        {#each filteredRepos as repo, index}
+            {#key filteredRepos}
+                <div in:fly|global={{ y: 50, duration: index*300 + 100, delay: 200, easing: cubicOut }}>
+                    <ProjectCard {repo} color="{ColorUtility.determineColor(repo.language)}"/>
+                </div>
+            {/key}
         {/each}
     </div>
 </section>

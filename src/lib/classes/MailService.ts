@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import type {Transporter} from "nodemailer"
 import {SMTP_MAIL_TO_ADDRESS, SMTP_PASS, SMTP_PORT, SMTP_SERVER, SMTP_USER} from "$env/static/private";
 import type {ContactEmail} from "$lib/model/ContactEmail";
 import validator from 'validator';
