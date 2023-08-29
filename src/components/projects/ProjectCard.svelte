@@ -1,6 +1,5 @@
 <script lang="ts">
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
-    import {ColorUtility} from "$lib/classes/ColorUtility";
 
     export let repo: GitHubRepo
     const slug = repo.name
