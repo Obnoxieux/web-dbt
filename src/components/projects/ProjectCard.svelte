@@ -14,7 +14,7 @@
         <p>{repo.description}</p>
         <div class="card-actions justify-between items-center">
             <div class="badge badge-lg badge-{color} dark:badge-outline">{repo.language}</div>
-            <a href="projects/{slug}" class="btn btn-outline">Details</a>
+            <a href="projects/{slug}" class="btn btn-outline" data-sveltekit-preload-code>Details</a>
         </div>
     </div>
 </div>
