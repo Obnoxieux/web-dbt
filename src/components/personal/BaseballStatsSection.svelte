@@ -34,7 +34,7 @@
         </div>
 
         {#key activeStatsTab}
-        <div in:slide={{delay: 150, easing: cubicIn}} out:fade={{duration: 150, easing: cubicOut}} class="flex flex-col gap-10">
+        <div in:slide={{easing: cubicIn}} class="flex flex-col gap-10">
             {#if activeStatsTab === StatsType.batting}
                     <BattingStats {statsBatting}/>
             {:else if activeStatsTab === StatsType.pitching}
