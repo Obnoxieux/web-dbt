@@ -55,6 +55,7 @@ export class MailService {
 
         await transporter.sendMail({
             from: this.#FROM_ADDRESS,
+            replyTo: contactEmail.email,
             to: SMTP_MAIL_TO_ADDRESS,
             subject: "New email via web-dbt",
             text: `From: ${contactEmail.fromName}/${contactEmail.email}, reason: ${contactEmail.reason}. 
