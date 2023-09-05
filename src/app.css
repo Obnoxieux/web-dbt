@@ -36,3 +36,13 @@
 .mini-headline {
 	@apply font-extrabold;
 }
+
+.color-github-logo {
+	@apply fill-black;
+}
+
+@media (prefers-color-scheme: dark) {
+	.color-github-logo {
+		@apply fill-white;
+	}
+}
