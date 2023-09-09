@@ -5,6 +5,11 @@
     const slug = repo.name
 
     export let color: string
+
+    /**
+     * Tailwind CSS class names to please its compiler
+     * badge-accent badge-primary badge-secondary badge-warning
+     */
 </script>
 
 <div class="card w-full h-full bg-base-200 border-2 border-neutral-content shadow-xl">
