@@ -3,9 +3,12 @@
 </script>
 
 <div class="hero bg-base-200 p-5 md:p-20 border-2 border-neutral-content rounded-2xl mb-4 shadow-xl">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" class="max-w-full lg:max-w-sm rounded-lg shadow-2xl" alt="Hero" />
-          <div>
+        <div class="hero-content flex-col lg:flex-row-reverse space-y-3">
+            <div class="flex flex-col gap-2 max-w-xs">
+                <img src="/fake_code_photo.webp" class="max-w-full lg:max-w-sm rounded-lg shadow-2xl" alt="IDE with code on a dark screen" />
+                <p class="text-sm italic">Obviously I am much better at writing code than taking pictures of it.</p>
+            </div>
+          <div class="max-w-2xl">
             <h1 class="text-5xl font-bold">Hi! I'm David.</h1>
             <p class="py-6">I transform zeros, ones and caffeine into beautiful and functional web and mobile applications.</p>
             <a href="/contact" class="btn btn-neutral">Get in touch</a>
