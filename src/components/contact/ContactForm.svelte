@@ -18,7 +18,6 @@
             <p class="prose">Content</p>
             <select required name="reason" class="select select-bordered w-full lg:max-w-[70%]">
                 <option disabled selected>Reason for Contact</option>
-                <option>Project Inquiry</option>
                 <option>Open Source Collaboration</option>
                 <option>Personal</option>
                 <option>Other</option>
