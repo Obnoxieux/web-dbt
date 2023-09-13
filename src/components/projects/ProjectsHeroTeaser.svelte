@@ -1,4 +1,4 @@
-<div class="hero min-h-full p-5 md:p-20 bg-base-200 rounded-lg shadow-lg">
+<div class="hero p-5 md:p-20 bg-base-200 rounded-lg shadow-lg">
     <div class="hero-content flex-col lg:flex-row-reverse">
         <img alt="Berlin Skylarks Logo" src="/fake_code_photo.webp" class="max-w-xs rounded-lg shadow-2xl" />
         <div>
