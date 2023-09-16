@@ -8,3 +8,8 @@
         </div>
     </div>
 </div>
+<style>
+    .hero {
+        min-height: 20%;
+    }
+</style>

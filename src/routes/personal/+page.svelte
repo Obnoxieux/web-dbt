@@ -6,17 +6,19 @@
     export let data;
 </script>
 
-<div class="prose">
-    <h1>Private Life</h1>
-    <p>The stuff I do when I'm not coding.</p>
+<div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <div class="prose">
+        <h1>Private Life</h1>
+        <p>The stuff I do when I'm not coding.</p>
+    </div>
+    <div class="divider"></div>
+    <BaseballTeaser/>
+    <div class="divider"></div>
+    <BaseballStatsSection
+            statsBatting="{data.stats.batting}"
+            statsPitching="{data.stats.pitching}"
+            statsFielding="{data.stats.fielding}"
+    />
+    <div class="divider my-8"></div>
+    <TeamHeroSection/>
 </div>
-<div class="divider"></div>
-<BaseballTeaser/>
-<div class="divider"></div>
-<BaseballStatsSection
-        statsBatting="{data.stats.batting}"
-        statsPitching="{data.stats.pitching}"
-        statsFielding="{data.stats.fielding}"
-/>
-<div class="divider my-8"></div>
-<TeamHeroSection/>
