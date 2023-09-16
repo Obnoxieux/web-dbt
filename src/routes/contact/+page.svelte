@@ -6,6 +6,8 @@
     <div class="prose mb-6">
         <h1>Contact me</h1>
         <p>Please use the contact form below to send me a message.</p>
+        <p>I am currently not available for job offers or freelance work.</p>
     </div>
+    <div class="divider"></div>
     <ContactForm/>
 </div>
