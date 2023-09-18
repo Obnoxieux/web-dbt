@@ -9,7 +9,7 @@
 <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
     <div class="prose">
         <h1>Private Life</h1>
-        <p>The stuff I do when I'm not coding.</p>
+        <p>The stuff I do when I'm not coding aka the thing we call life.</p>
     </div>
     <div class="divider"></div>
     <BaseballTeaser/>

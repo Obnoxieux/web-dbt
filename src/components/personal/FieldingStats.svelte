@@ -67,7 +67,7 @@
             </tbody>
         </table>
     </div>
-    <p>Add position chart here</p>
+<!--    <p>Add position chart here</p>-->
 {:else}
     <p>There seems to be no data available for the time being.</p>
 {/if}
