@@ -20,3 +20,9 @@
     </ul>
   </div>
 </div>
+
+<style>
+  .drawer-side {
+    z-index: 99;
+  }
+</style>
