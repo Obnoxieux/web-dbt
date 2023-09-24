@@ -5,32 +5,27 @@
     import NavbarLinks from "../components/core/NavbarLinks.svelte";
     import { MetaTags } from 'svelte-meta-tags';
     import { page } from '$app/stores';
+    import { OpenGraphDefaults } from "$lib/classes/OpenGraphDefaults";
 
     export let data; // Exported so that child components/pages can provide data.
 
-    const standardDescription = 'Turning caffeine into code since 2021'
-    const standardTitle = 'Yet another coding website'
     const url = $page.url
-    const standardImage = 'fake_code_photo.webp'
 
     // Create a reactive statement to compute meta tags.
     $: metaTags = {
-      title: standardTitle,
+      title: OpenGraphDefaults.title,
       titleTemplate: 'web-dbt | %s',
-      description: standardDescription,
+      description: OpenGraphDefaults.description,
       openGraph: {
         url: url,
         type: 'website',
-        title: standardTitle,
-        description: standardDescription,
+        title: OpenGraphDefaults.title,
+        description: OpenGraphDefaults.description,
         images: [
           {
-            url: `${url}${standardImage}`,
-            width: 800,
-            height: 600,
+            url: `${url}${OpenGraphDefaults.ogImageName}`,
             alt: 'Code in an IDE on a dark background'
           },
-          { url: '' },
         ],
         siteName: 'web-dbt'
       },
