@@ -29,6 +29,7 @@
 	"type": "module",
 	"dependencies": {
 		"nodemailer": "^6.9.4",
+		"svelte-meta-tags": "^3.0.4",
 		"validator": "^13.11.0"
 	}
 }

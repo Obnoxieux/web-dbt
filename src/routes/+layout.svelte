@@ -1,9 +1,44 @@
-<script>
+<script lang="ts">
     import "../app.css";
     import Navbar from '../components/core/Navbar.svelte';
     import Footer from "../components/core/Footer.svelte";
     import NavbarLinks from "../components/core/NavbarLinks.svelte";
+    import { MetaTags } from 'svelte-meta-tags';
+    import { page } from '$app/stores';
+
+    export let data; // Exported so that child components/pages can provide data.
+
+    const standardDescription = 'Turning caffeine into code since 2021'
+    const standardTitle = 'Yet another coding website'
+    const url = $page.url
+    const standardImage = 'fake_code_photo.webp'
+
+    // Create a reactive statement to compute meta tags.
+    $: metaTags = {
+      title: standardTitle,
+      titleTemplate: 'web-dbt | %s',
+      description: standardDescription,
+      openGraph: {
+        url: url,
+        type: 'website',
+        title: standardTitle,
+        description: standardDescription,
+        images: [
+          {
+            url: `${url}${standardImage}`,
+            width: 800,
+            height: 600,
+            alt: 'Code in an IDE on a dark background'
+          },
+          { url: '' },
+        ],
+        siteName: 'web-dbt'
+      },
+      ...$page.data.metaTagsChild // Override with child page meta tags if they exist.
+    };
 </script>
+
+<MetaTags {...metaTags} />
 
 <div class="drawer">
   <input id="drawer" type="checkbox" class="drawer-toggle" />
