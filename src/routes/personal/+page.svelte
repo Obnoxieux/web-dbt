@@ -15,6 +15,7 @@
     <BaseballTeaser/>
     <div class="divider"></div>
     <BaseballStatsSection
+            season="{data.stats.season}"
             statsBatting="{data.stats.batting}"
             statsPitching="{data.stats.pitching}"
             statsFielding="{data.stats.fielding}"

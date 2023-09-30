@@ -1,7 +1,8 @@
-import { OpenGraphDefaults } from '$lib/classes/OpenGraphDefaults';
-import type { MetaTagsProps } from 'svelte-meta-tags';
+import {OpenGraphDefaults} from '$lib/classes/OpenGraphDefaults';
+import type {MetaTagsProps} from 'svelte-meta-tags';
+import type {PageLoad} from "../../../../.svelte-kit/types/src/routes/$types";
 
-export const load = async ({ url, data }) => {
+export const load: PageLoad = async ({ url, data }) => {
     const pageTitle = `Project: ${data.repo.name}`
     const description = `${data.repo.description ?? 'Project details at a glance'}`
 
