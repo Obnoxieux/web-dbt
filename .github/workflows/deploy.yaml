@@ -1,0 +1,50 @@
+name: Deploy to Production Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      SMTP_MAIL_TO_ADDRESS: ${{ secrets.SMTP_MAIL_TO_ADDRESS }}
+      PUBLIC_CONTACT_EMAIL_ADDRESS: ${{ secrets.PUBLIC_CONTACT_EMAIL_ADDRESS }}
+      PUBLIC_CONTACT_PHONE: ${{ secrets.PUBLIC_CONTACT_PHONE }}
+      PUBLIC_CONTACT_ADDRESS: ${{ secrets.PUBLIC_CONTACT_ADDRESS }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: vite build
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: install ssh keys
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+    - name: copy build files over
+      run: |
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/build/
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./node_modules/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/node_modules/
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./package.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package.json
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./package-lock.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package-lock.json
