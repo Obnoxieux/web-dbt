@@ -30,6 +30,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+        working-directory: ${{ github.workspace }}
 
 
   deploy:
@@ -44,7 +45,7 @@ jobs:
         ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: copy build files over
       run: |
-        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/build/
-        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" node_modules/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/node_modules/
-        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" package.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package.json
-        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" package-lock.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package-lock.json
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/build/
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/node_modules/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/node_modules/
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/package.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package.json
+        rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/package-lock.json ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/package-lock.json
