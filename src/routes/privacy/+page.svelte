@@ -1,5 +1,6 @@
 <script lang="ts">
     import {PUBLIC_CONTACT_ADDRESS, PUBLIC_CONTACT_EMAIL_ADDRESS, PUBLIC_CONTACT_PHONE} from "$env/static/public";
+
     const contactEmailAddress = PUBLIC_CONTACT_EMAIL_ADDRESS
     const contactPhone = PUBLIC_CONTACT_PHONE
     const contactAddress = PUBLIC_CONTACT_ADDRESS
@@ -60,7 +61,10 @@
             nur insoweit verarbeiten, wie dies zur Erf&uuml;llung seiner Leistungspflichten erforderlich ist und unsere
             Weisungen in Bezug auf diese Daten befolgen.</p>
         <p>Wir setzen folgende(n) Hoster ein:</p>
-        <p>David Battefeld, {contactAddress}</p>
+        <p>Hetzner Online GmbH
+            Industriestr. 25
+            91710 Gunzenhausen
+            Germany</p>
         <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
         <h3>Datenschutz</h3>
         <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr

@@ -8,11 +8,21 @@ import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
 export const load = (async ({params }) => {
     const request = new BSMAPIRequest()
 
-    const itemBatting: BattingStatisticsEntry = await request.loadPersonalStatistics(StatsType.batting)
-    const itemPitching: PitchingStatisticsEntry = await request.loadPersonalStatistics(StatsType.pitching)
-    const itemFielding: FieldingStatisticsEntry = await request.loadPersonalStatistics(StatsType.fielding)
+    // if the month is January, February or March it is unlikely to have stats already, so show last year
+    let season: number
+    const currentDate = new Date()
+    if (currentDate.getMonth() <= 2) {
+        season = currentDate.getFullYear() - 1
+    } else {
+        season = currentDate.getFullYear()
+    }
+
+    const itemBatting: BattingStatisticsEntry = await request.loadPersonalStatistics(StatsType.batting, season)
+    const itemPitching: PitchingStatisticsEntry = await request.loadPersonalStatistics(StatsType.pitching, season)
+    const itemFielding: FieldingStatisticsEntry = await request.loadPersonalStatistics(StatsType.fielding, season)
 
     const stats = {
+        season: season,
         batting: itemBatting,
         pitching: itemPitching,
         fielding: itemFielding,

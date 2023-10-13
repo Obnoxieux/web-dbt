@@ -6,13 +6,13 @@
     import PitchingStats from "./PitchingStats.svelte";
     import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
     import FieldingStats from "./FieldingStats.svelte";
-    import { slide } from 'svelte/transition';
-    import { fade } from 'svelte/transition';
-    import {cubicIn, cubicOut} from "svelte/easing";
+    import {slide} from 'svelte/transition';
+    import {cubicIn} from "svelte/easing";
 
     export let statsBatting: BattingStatisticsEntry;
     export let statsPitching: PitchingStatisticsEntry;
     export let statsFielding: FieldingStatisticsEntry;
+    export let season: number;
 
     let activeStatsTab = StatsType.batting
 
@@ -24,8 +24,8 @@
 <div class="max-w-xs sm:max-w-sm md:max-w-4xl lg:max-w-full">
     <div class="flex flex-col gap-10">
         <div class="max-w-3xl space-y-6">
-            <h2 class="h2 mb-2">My Stats</h2>
-            <p>Baseball is a sport all about numbers. These are mine for the current season. Data is imported automatically via the <a class="link" href="https://bsm.baseball-softball.de/api_docs" target="_blank">API of the German Baseball & Softball Association</a>.</p>
+            <h2 class="h2 mb-2">My Stats ({season} season)</h2>
+            <p>Baseball is a sport all about numbers. These are mine. Data is imported automatically via the <a class="link" href="https://bsm.baseball-softball.de/api_docs" target="_blank">API of the German Baseball & Softball Association</a>.</p>
         </div>
         <div class="tabs tabs-boxed justify-around my-2 shadow-md">
             <button on:click={() => changeStatsTab(StatsType.batting)} class="tab grow {activeStatsTab === StatsType.batting ? 'tab-active' : ''}">Batting</button>

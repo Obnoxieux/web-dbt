@@ -5,7 +5,7 @@ import type {AbstractStatisticsEntry} from "$lib/model/AbstractStatisticsEntry";
 export class BSMAPIRequest extends AbstractAPIRequest {
     API_URL = "https://bsm.baseball-softball.de"
     protected readonly bsmPersonID: number = 76222
-    defaultSeason = 2023
+    protected readonly defaultSeason = new Date().getFullYear()
 
 
     protected buildURL(statsType: StatsType, season?: number): string {
