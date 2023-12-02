@@ -5,7 +5,7 @@
         <p>If you choose to use the app, you consent to the collection and use of information in accordance with this policy.
             The information I collect will be used to provide and improve the service. I will only use or share your information as described in this Privacy Policy.
         </p>
-        <p>The app &quot;Berlin Skylarks&quot; was developed by David Battefeld as a free and open source app without intention of any making any profit.
+        <p>The app &quot;German Sucks&quot; was developed by David Battefeld as a free and open source app without intention of any making any profit.
             It is an app for providing humorous German words to save and share.</p>
         <p>Publisher or operator in the sense of these rules is solely:</p>
         <p>David Battefeld<br>
