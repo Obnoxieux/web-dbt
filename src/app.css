@@ -14,7 +14,7 @@
 }
 
 .hljs {
-	background-color: hsl(var(--n) / var(--tw-bg-opacity)) !important;
+	background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity))) !important;
 }
 
 .h1 {
