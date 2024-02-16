@@ -27,11 +27,10 @@
 
 <style>
   .tab {
-    
     @apply rounded-lg;
   }
 
   .tab-active {
-    @apply bg-neutral
+    @apply bg-neutral;
   }
 </style>
