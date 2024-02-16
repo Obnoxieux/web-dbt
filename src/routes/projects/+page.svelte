@@ -9,9 +9,12 @@
     let shownLanguage: string = "All"
 
     let languages: Array<string> = ["All"]
-    data.repos.forEach((repo: GitHubRepo) => {
-        languages.push(repo.language)
-    })
+
+    if (Array.isArray(data.repos)) {
+        data.repos.forEach((repo: GitHubRepo) => {
+            languages.push(repo.language)
+        })
+    }
     let filters = new Set<string>(languages)
 
     let filteredRepos: GitHubRepo[] = data.repos
