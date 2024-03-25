@@ -16,6 +16,7 @@
       title: OpenGraphDefaults.title,
       titleTemplate: 'web-dbt | %s',
       description: OpenGraphDefaults.description,
+      canonical: url,
       openGraph: {
         url: url,
         type: 'website',
