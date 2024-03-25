@@ -32,5 +32,6 @@
 
   .tab-active {
     @apply bg-neutral;
+    @apply text-neutral-content;
   }
 </style>
