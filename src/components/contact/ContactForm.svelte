@@ -1,7 +1,7 @@
 <script>
     import { enhance } from '$app/forms';
 
-    let formSubmitted = false
+    let formSubmitted = $state(false)
 </script>
 
 {#if !formSubmitted}

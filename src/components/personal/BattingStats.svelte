@@ -1,7 +1,11 @@
 <script lang="ts">
     import type {BattingStatisticsEntry} from "$lib/model/BattingStatisticsEntry";
 
-    export let statsBatting: BattingStatisticsEntry;
+    interface Props {
+        statsBatting: BattingStatisticsEntry;
+    }
+
+    let { statsBatting }: Props = $props();
 </script>
 
 {#if statsBatting.summaries.length > 0}

@@ -5,8 +5,8 @@
     import {fly} from "svelte/transition";
     import {cubicOut} from "svelte/easing";
 
-    export let data;
-    let shownLanguage: string = "All"
+    let { data } = $props();
+    let shownLanguage: string = $state("All")
 
     let languages: Array<string> = ["All"]
 
@@ -17,7 +17,7 @@
     }
     let filters = new Set<string>(languages)
 
-    let filteredRepos: GitHubRepo[] = data.repos
+    let filteredRepos: GitHubRepo[] = $state(data.repos)
 
     function toggleFilter(filter: string) {
         shownLanguage = filter
@@ -45,7 +45,7 @@
         <div class="h2">Filter by Language:</div>
         {#each filters as filter}
             <button
-                    on:click={() => toggleFilter(filter)}
+                    onclick={() => toggleFilter(filter)}
                     class="filter-button btn btn-sm md:btn-md"
                     class:btn-neutral={filter === shownLanguage}
                     class:btn-outline={filter !== shownLanguage}

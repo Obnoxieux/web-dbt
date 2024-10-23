@@ -1,10 +1,14 @@
 <script lang="ts">
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
 
-    export let repo: GitHubRepo
     const slug = repo.name
 
-    export let color: string
+    interface Props {
+        repo: GitHubRepo;
+        color: string;
+    }
+
+    let { repo, color }: Props = $props();
 
     /**
      * Tailwind CSS class names to please its compiler

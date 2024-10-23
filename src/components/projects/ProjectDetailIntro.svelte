@@ -1,7 +1,11 @@
 <script lang="ts">
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
 
-    export let repo: GitHubRepo
+    interface Props {
+        repo: GitHubRepo;
+    }
+
+    let { repo }: Props = $props();
 </script>
 
 <section>

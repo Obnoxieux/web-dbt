@@ -2,8 +2,12 @@
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
     import {c} from "svelte-highlight/languages";
 
-    export let repo: GitHubRepo
-    export let color: string = "warning"
+    interface Props {
+        repo: GitHubRepo;
+        color?: string;
+    }
+
+    let { repo, color = "warning" }: Props = $props();
 
     const createdDate = new Date(repo.created_at).toLocaleString()
     const updatedDate = new Date(repo.updated_at).toLocaleString()

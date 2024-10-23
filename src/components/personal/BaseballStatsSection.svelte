@@ -9,12 +9,21 @@
     import {slide} from 'svelte/transition';
     import {cubicIn} from "svelte/easing";
 
-    export let statsBatting: BattingStatisticsEntry;
-    export let statsPitching: PitchingStatisticsEntry;
-    export let statsFielding: FieldingStatisticsEntry;
-    export let season: number;
+    interface Props {
+        statsBatting: BattingStatisticsEntry;
+        statsPitching: PitchingStatisticsEntry;
+        statsFielding: FieldingStatisticsEntry;
+        season: number;
+    }
 
-    let activeStatsTab = StatsType.batting
+    let {
+        statsBatting,
+        statsPitching,
+        statsFielding,
+        season
+    }: Props = $props();
+
+    let activeStatsTab = $state(StatsType.batting)
 
     function changeStatsTab(type: StatsType) {
         activeStatsTab = type
@@ -28,9 +37,9 @@
             <p>Baseball is a sport all about numbers. These are mine. Data is imported automatically via the <a class="link" href="https://bsm.baseball-softball.de/api_docs" target="_blank">API of the German Baseball & Softball Association</a>.</p>
         </div>
         <div class="tabs tabs-boxed flex justify-around my-2 shadow-md">
-            <button on:click={() => changeStatsTab(StatsType.batting)} class="tab grow {activeStatsTab === StatsType.batting ? 'tab-active' : ''}">Batting</button>
-            <button on:click={() => changeStatsTab(StatsType.pitching)} class="tab grow {activeStatsTab === StatsType.pitching ? 'tab-active' : ''}">Pitching</button>
-            <button on:click={() => changeStatsTab(StatsType.fielding)} class="tab grow {activeStatsTab === StatsType.fielding ? 'tab-active' : ''}">Fielding</button>
+            <button onclick={() => changeStatsTab(StatsType.batting)} class="tab grow {activeStatsTab === StatsType.batting ? 'tab-active' : ''}">Batting</button>
+            <button onclick={() => changeStatsTab(StatsType.pitching)} class="tab grow {activeStatsTab === StatsType.pitching ? 'tab-active' : ''}">Pitching</button>
+            <button onclick={() => changeStatsTab(StatsType.fielding)} class="tab grow {activeStatsTab === StatsType.fielding ? 'tab-active' : ''}">Fielding</button>
         </div>
 
         {#key activeStatsTab}

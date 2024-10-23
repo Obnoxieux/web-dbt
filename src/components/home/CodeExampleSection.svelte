@@ -4,7 +4,7 @@
     import { Language } from "$lib/enums/Language";
     import { languages } from "$lib/codeSamples";
 
-    let lang: any = languages.typescript
+    let lang: any = $state(languages.typescript)
 
     function handleMessage(event: { detail: { language: Language; }; }) {
         switch (event.detail.language) {

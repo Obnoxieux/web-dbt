@@ -5,7 +5,7 @@
   import {cubicIn} from "svelte/easing";
   import { fly } from 'svelte/transition';
 
-  export let lang = languages.typescript
+  let { lang = languages.typescript } = $props();
 </script>
 
 <svelte:head>
@@ -14,8 +14,10 @@
 
 {#key lang}
     <div in:fly={{x: -50, easing: cubicIn}} class="mockup-code col-span-2 min-h-[640px]">
-        <Highlight language={lang.languageType} code={lang.codeSample} let:highlighted>
+        <Highlight language={lang.languageType} code={lang.codeSample} >
+            {#snippet children({ highlighted })}
             <LineNumbers {highlighted} />
+                    {/snippet}
         </Highlight>
     </div>
 {/key}

@@ -3,7 +3,7 @@
     import BaseballStatsSection from "../../components/personal/BaseballStatsSection.svelte";
     import TeamHeroSection from "../../components/personal/TeamHeroSection.svelte";
 
-    export let data;
+    let { data } = $props();
 </script>
 
 <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">

@@ -7,12 +7,12 @@
     import { page } from '$app/stores';
     import { OpenGraphDefaults } from "$lib/classes/OpenGraphDefaults";
 
-    export let data; // Exported so that child components/pages can provide data.
+  let { data, children } = $props();
 
     const url = $page.url
 
     // Create a reactive statement to compute meta tags.
-    $: metaTags = {
+    let metaTags = $derived({
       title: OpenGraphDefaults.title,
       titleTemplate: 'web-dbt | %s',
       description: OpenGraphDefaults.description,
@@ -31,7 +31,7 @@
         siteName: 'web-dbt'
       },
       ...$page.data.metaTagsChild // Override with child page meta tags if they exist.
-    };
+    });
 </script>
 
 <MetaTags {...metaTags} />
@@ -40,7 +40,7 @@
   <input id="drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col justify-items-center justify-self-center max-w-[92%] md:max-w-[85%] xl:max-w-[75%]">
     <Navbar />
-    <slot />
+    {@render children?.()}
     <div class="divider"></div>
     <Footer/>
   </div>

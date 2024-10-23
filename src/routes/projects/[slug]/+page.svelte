@@ -4,7 +4,7 @@
     import ProjectDetailLinkSection from "../../../components/projects/ProjectDetailLinkSection.svelte";
     import {ColorUtility} from "$lib/classes/ColorUtility";
 
-    export let data
+    let { data } = $props();
     const color = ColorUtility.determineColor(data.repo.language)
 </script>
 

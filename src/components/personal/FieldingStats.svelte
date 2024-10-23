@@ -1,7 +1,11 @@
 <script lang="ts">
     import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
 
-    export let statsFielding: FieldingStatisticsEntry;
+    interface Props {
+        statsFielding: FieldingStatisticsEntry;
+    }
+
+    let { statsFielding }: Props = $props();
 </script>
 
 {#if statsFielding.summaries.length > 0}

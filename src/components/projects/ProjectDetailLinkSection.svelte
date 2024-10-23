@@ -1,8 +1,12 @@
 <script lang="ts">
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
 
-    export let repo: GitHubRepo
-    export let color: string = "warning"
+    interface Props {
+        repo: GitHubRepo;
+        color?: string;
+    }
+
+    let { repo, color = "warning" }: Props = $props();
 </script>
 
 <section>
