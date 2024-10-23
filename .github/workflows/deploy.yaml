@@ -25,9 +25,9 @@ jobs:
       PUBLIC_CONTACT_ADDRESS: ${{ secrets.PUBLIC_CONTACT_ADDRESS }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -41,7 +41,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
-      - name: copy build files over
+      - name: copy build files to remote server
         run: |
           rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/build/
           rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/node_modules/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/node_modules/
