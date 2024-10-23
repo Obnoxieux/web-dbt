@@ -5,7 +5,7 @@
         statsBatting: BattingStatisticsEntry;
     }
 
-    let { statsBatting }: Props = $props();
+    let {statsBatting}: Props = $props();
 </script>
 
 {#if statsBatting.summaries.length > 0}
@@ -45,8 +45,8 @@
             <!-- head -->
             <thead>
             <tr>
-                <th></th>
-                <th>Player</th>
+                <th>Season</th>
+                <th>League</th>
                 <th>G</th>
                 <th>GS</th>
                 <th>PA</th>
@@ -69,30 +69,32 @@
             </tr>
             </thead>
             <tbody>
-            <!-- row 1 -->
-            <tr>
-                <th>1</th>
-                <td>David</td>
-                <td>{statsBatting.summaries[0].values.games}</td>
-                <td>{statsBatting.summaries[0].values.games_started}</td>
-                <td>{statsBatting.summaries[0].values.plate_appearances}</td>
-                <td>{statsBatting.summaries[0].values.at_bats}</td>
-                <td>{statsBatting.summaries[0].values.runs}</td>
-                <td>{statsBatting.summaries[0].values.runs_batted_in}</td>
-                <td>{statsBatting.summaries[0].values.hits}</td>
-                <td>{statsBatting.summaries[0].values.doubles}</td>
-                <td>{statsBatting.summaries[0].values.triples}</td>
-                <td>{statsBatting.summaries[0].values.homeruns}</td>
-                <td>{statsBatting.summaries[0].values.strikeouts}</td>
-                <td>{statsBatting.summaries[0].values.base_on_balls}</td>
-                <td>{statsBatting.summaries[0].values.intentional_base_on_balls}</td>
-                <td>{statsBatting.summaries[0].values.hit_by_pitches}</td>
-                <td>{statsBatting.summaries[0].values.stolen_bases}</td>
-                <td>{statsBatting.summaries[0].values.caught_stealings}</td>
-                <td>{statsBatting.summaries[0].values.sacrifice_hits}</td>
-                <td>{statsBatting.summaries[0].values.sacrifice_flys}</td>
-                <td>{statsBatting.summaries[0].values.interferences}</td>
-            </tr>
+            <!-- content rows -->
+            {#each statsBatting.data as dataset}
+                <tr>
+                    <th>{dataset.league.season}</th>
+                    <td>{dataset.league.name}</td>
+                    <td>{dataset.values.games}</td>
+                    <td>{dataset.values.games_started}</td>
+                    <td>{dataset.values.plate_appearances}</td>
+                    <td>{dataset.values.at_bats}</td>
+                    <td>{dataset.values.runs}</td>
+                    <td>{dataset.values.runs_batted_in}</td>
+                    <td>{dataset.values.hits}</td>
+                    <td>{dataset.values.doubles}</td>
+                    <td>{dataset.values.triples}</td>
+                    <td>{dataset.values.homeruns}</td>
+                    <td>{dataset.values.strikeouts}</td>
+                    <td>{dataset.values.base_on_balls}</td>
+                    <td>{dataset.values.intentional_base_on_balls}</td>
+                    <td>{dataset.values.hit_by_pitches}</td>
+                    <td>{dataset.values.stolen_bases}</td>
+                    <td>{dataset.values.caught_stealings}</td>
+                    <td>{dataset.values.sacrifice_hits}</td>
+                    <td>{dataset.values.sacrifice_flys}</td>
+                    <td>{dataset.values.interferences}</td>
+                </tr>
+            {/each}
             </tbody>
         </table>
     </div>

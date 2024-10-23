@@ -10,12 +10,13 @@ export class BSMAPIRequest extends AbstractAPIRequest {
 
     protected buildURL(statsType: StatsType, season?: number): string {
         const selectedSeason = season ?? this.defaultSeason
-        // let searchTerm = ''
-        // if (search !== undefined && search !== null) {
-        //     searchTerm = `&search=${search}`
-        // }
+        let urlString = `${this.API_URL}/people/${this.bsmPersonID}/statistics/${statsType}.json`
 
-        return `${this.API_URL}/people/${this.bsmPersonID}/statistics/${statsType}.json?filters[seasons][]=${selectedSeason}`
+        if (season) {
+            urlString = urlString.concat(`?filters[seasons][]=${selectedSeason}`)
+        }
+
+        return urlString
     }
 
     async loadPersonalStatistics(statsType: StatsType, season?: number): Promise<AbstractStatisticsEntry> {

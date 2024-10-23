@@ -13,14 +13,12 @@
         statsBatting: BattingStatisticsEntry;
         statsPitching: PitchingStatisticsEntry;
         statsFielding: FieldingStatisticsEntry;
-        season: number;
     }
 
     let {
         statsBatting,
         statsPitching,
         statsFielding,
-        season
     }: Props = $props();
 
     let activeStatsTab = $state(StatsType.batting)
@@ -33,7 +31,7 @@
 <div class="max-w-xs sm:max-w-sm md:max-w-4xl lg:max-w-full">
     <div class="flex flex-col gap-10">
         <div class="max-w-3xl space-y-6">
-            <h2 class="h2 mb-2">My Stats ({season} season)</h2>
+            <h2 class="h2 mb-2">My Stats (career)</h2>
             <p>Baseball is a sport all about numbers. These are mine. Data is imported automatically via the <a class="link" href="https://bsm.baseball-softball.de/api_docs" target="_blank">API of the German Baseball & Softball Association</a>.</p>
         </div>
         <div class="tabs tabs-boxed flex justify-around my-2 shadow-md">
@@ -56,8 +54,8 @@
     </div>
 </div>
 
-<style>
-    .tabs-boxed .tab-active:not(.tab-disabled):not([disabled]) {
-        @apply bg-[#ba0c2f] text-white;
+<style lang="postcss">
+    .tabs-boxed .tab-active {
+        @apply bg-[#ba0c2f] text-white !important;
     }
 </style>

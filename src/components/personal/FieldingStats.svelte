@@ -5,7 +5,7 @@
         statsFielding: FieldingStatisticsEntry;
     }
 
-    let { statsFielding }: Props = $props();
+    let {statsFielding}: Props = $props();
 </script>
 
 {#if statsFielding.summaries.length > 0}
@@ -38,8 +38,8 @@
             <!-- head -->
             <thead>
             <tr>
-                <th></th>
-                <th>Player</th>
+                <th>Season</th>
+                <th>League</th>
                 <th>G</th>
                 <th>GS</th>
                 <th>A</th>
@@ -53,25 +53,27 @@
             </tr>
             </thead>
             <tbody>
-            <!-- row 1 -->
-            <tr>
-                <th>1</th>
-                <td>David</td>
-                <td>{statsFielding.summaries[0].values.games}</td>
-                <td>{statsFielding.summaries[0].values.games_started}</td>
-                <td>{statsFielding.summaries[0].values.assists}</td>
-                <td>{statsFielding.summaries[0].values.putouts}</td>
-                <td>{statsFielding.summaries[0].values.errors}</td>
-                <td>{statsFielding.summaries[0].values.double_plays}</td>
-                <td>{statsFielding.summaries[0].values.triple_plays}</td>
-                <td>{statsFielding.summaries[0].values.passed_balls}</td>
-                <td>{statsFielding.summaries[0].values.stolen_bases}</td>
-                <td>{statsFielding.summaries[0].values.caught_stealings}</td>
-            </tr>
+            <!-- content rows -->
+            {#each statsFielding.data as dataset}
+                <tr>
+                    <th>{dataset.league.season}</th>
+                    <td>{dataset.league.name}</td>
+                    <td>{dataset.values.games}</td>
+                    <td>{dataset.values.games_started}</td>
+                    <td>{dataset.values.assists}</td>
+                    <td>{dataset.values.putouts}</td>
+                    <td>{dataset.values.errors}</td>
+                    <td>{dataset.values.double_plays}</td>
+                    <td>{dataset.values.triple_plays}</td>
+                    <td>{dataset.values.passed_balls}</td>
+                    <td>{dataset.values.stolen_bases}</td>
+                    <td>{dataset.values.caught_stealings}</td>
+                </tr>
+            {/each}
             </tbody>
         </table>
     </div>
-<!--    <p>Add position chart here</p>-->
+    <!--    <p>Add position chart here</p>-->
 {:else}
     <p>There seems to be no data available for the time being.</p>
 {/if}

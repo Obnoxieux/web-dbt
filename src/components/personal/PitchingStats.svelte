@@ -5,7 +5,7 @@
         statsPitching: PitchingStatisticsEntry;
     }
 
-    let { statsPitching }: Props = $props();
+    let {statsPitching}: Props = $props();
 </script>
 
 {#if statsPitching.summaries.length > 0}
@@ -45,8 +45,8 @@
             <!-- head -->
             <thead>
             <tr>
-                <th></th>
-                <th>Player</th>
+                <th>Season</th>
+                <th>League</th>
                 <th>G</th>
                 <th>GS</th>
                 <th>BF</th>
@@ -67,31 +67,35 @@
                 <th>SV</th>
             </tr>
             </thead>
+
             <tbody>
-            <!-- row 1 -->
-            <tr>
-                <th>1</th>
-                <td>David</td>
-                <td>{statsPitching.summaries[0].values.games}</td>
-                <td>{statsPitching.summaries[0].values.games_started}</td>
-                <td>{statsPitching.summaries[0].values.batters_faced}</td>
-                <td>{statsPitching.summaries[0].values.at_bats}</td>
-                <td>{statsPitching.summaries[0].values.runs}</td>
-                <td>{statsPitching.summaries[0].values.earned_runs}</td>
-                <td>{statsPitching.summaries[0].values.hits}</td>
-                <td>{statsPitching.summaries[0].values.doubles}</td>
-                <td>{statsPitching.summaries[0].values.triples}</td>
-                <td>{statsPitching.summaries[0].values.homeruns}</td>
-                <td>{statsPitching.summaries[0].values.strikeouts}</td>
-                <td>{statsPitching.summaries[0].values.base_on_balls_allowed}</td>
-                <td>{statsPitching.summaries[0].values.intentional_base_on_balls}</td>
-                <td>{statsPitching.summaries[0].values.hit_by_pitches}</td>
-                <td>{statsPitching.summaries[0].values.wild_pitches}</td>
-                <td>{statsPitching.summaries[0].values.interferences}</td>
-                <td>{statsPitching.summaries[0].values.balks}</td>
-                <td>{statsPitching.summaries[0].values.saves}</td>
-            </tr>
+            <!-- content rows -->
+            {#each statsPitching.data as dataset}
+                <tr>
+                    <th>{dataset.league.season}</th>
+                    <td>{dataset.league.name}</td>
+                    <td>{dataset.values.games}</td>
+                    <td>{dataset.values.games_started}</td>
+                    <td>{dataset.values.batters_faced}</td>
+                    <td>{dataset.values.at_bats}</td>
+                    <td>{dataset.values.runs}</td>
+                    <td>{dataset.values.earned_runs}</td>
+                    <td>{dataset.values.hits}</td>
+                    <td>{dataset.values.doubles}</td>
+                    <td>{dataset.values.triples}</td>
+                    <td>{dataset.values.homeruns}</td>
+                    <td>{dataset.values.strikeouts}</td>
+                    <td>{dataset.values.base_on_balls_allowed}</td>
+                    <td>{dataset.values.intentional_base_on_balls}</td>
+                    <td>{dataset.values.hit_by_pitches}</td>
+                    <td>{dataset.values.wild_pitches}</td>
+                    <td>{dataset.values.interferences}</td>
+                    <td>{dataset.values.balks}</td>
+                    <td>{dataset.values.saves}</td>
+                </tr>
+            {/each}
             </tbody>
+
         </table>
     </div>
 {:else}
