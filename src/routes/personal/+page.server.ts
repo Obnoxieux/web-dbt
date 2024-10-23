@@ -5,7 +5,7 @@ import {StatsType} from "$lib/enums/StatsType";
 import type {PitchingStatisticsEntry} from "$lib/model/PitchingStatisticsEntry";
 import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
 
-export const load = (async ({params }) => {
+export const load = (async () => {
     const request = new BSMAPIRequest()
 
     const itemBatting: BattingStatisticsEntry = await request.loadPersonalStatistics(StatsType.batting)

@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<style>
+<style lang="postcss">
   .tab {
     @apply rounded-lg;
   }

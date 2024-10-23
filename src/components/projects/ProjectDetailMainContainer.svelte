@@ -1,6 +1,5 @@
 <script lang="ts">
     import type {GitHubRepo} from "$lib/model/GitHubRepo";
-    import {c} from "svelte-highlight/languages";
 
     interface Props {
         repo: GitHubRepo;
