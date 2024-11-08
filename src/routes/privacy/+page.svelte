@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {env} from "$env/dynamic/private";
+    import {env} from "$env/dynamic/public";
 
     const contactEmailAddress = env.PUBLIC_CONTACT_EMAIL_ADDRESS
     const contactPhone = env.PUBLIC_CONTACT_PHONE
