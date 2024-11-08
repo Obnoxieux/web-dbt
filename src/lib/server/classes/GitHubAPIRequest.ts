@@ -1,6 +1,6 @@
 import {AbstractAPIRequest} from "$lib/classes/AbstractAPIRequest";
 import type {GitHubRepo} from "$lib/model/GitHubRepo";
-import {GITHUB_ACCESS_TOKEN} from "$env/static/private";
+import {env} from "$env/dynamic/private";
 
 export class GitHubAPIRequest extends AbstractAPIRequest {
     protected readonly API_URL = "https://api.github.com"
@@ -14,7 +14,7 @@ export class GitHubAPIRequest extends AbstractAPIRequest {
 
     protected setRequestOptions(): RequestInit {
         const headers = new Headers()
-        headers.append("Authorization", `Bearer ${GITHUB_ACCESS_TOKEN}`)
+        headers.append("Authorization", `Bearer ${env.GITHUB_ACCESS_TOKEN}`)
         headers.append("Accept", "application/vnd.github+json")
 
         return {

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import {PUBLIC_CONTACT_ADDRESS, PUBLIC_CONTACT_EMAIL_ADDRESS, PUBLIC_CONTACT_PHONE} from "$env/static/public";
-    const contactEmailAddress = PUBLIC_CONTACT_EMAIL_ADDRESS
-    const contactPhone = PUBLIC_CONTACT_PHONE
-    const contactAddress = PUBLIC_CONTACT_ADDRESS
+    import {env} from "$env/dynamic/public";
+    const contactEmailAddress = env.PUBLIC_CONTACT_EMAIL_ADDRESS
+    const contactPhone = env.PUBLIC_CONTACT_PHONE
+    const contactAddress = env.PUBLIC_CONTACT_ADDRESS
 </script>
 
 <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
