@@ -58,7 +58,7 @@
         {#each filteredRepos as repo, index}
             {#key filteredRepos}
                 <div in:fly|global={{ y: 50, duration: index*300 + 100, delay: 200, easing: cubicOut }}>
-                    <ProjectCard {repo} color="{ColorUtility.determineColor(repo.language)}"/>
+                    <ProjectCard {repo} color={ColorUtility.determineColor(repo.language)}/>
                 </div>
             {/key}
         {/each}

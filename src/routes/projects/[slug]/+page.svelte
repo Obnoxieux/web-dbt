@@ -10,10 +10,10 @@
 
 <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
     <div class="flex flex-col gap-3">
-        <ProjectDetailIntro repo="{data.repo}"/>
+        <ProjectDetailIntro repo={data.repo}/>
         <div class="divider"></div>
-        <ProjectDetailMainContainer repo="{data.repo}" {color}/>
+        <ProjectDetailMainContainer repo={data.repo} {color}/>
         <div class="divider col-span-4"></div>
-        <ProjectDetailLinkSection repo="{data.repo}" {color}/>
+        <ProjectDetailLinkSection repo={data.repo} {color}/>
     </div>
 </div>
