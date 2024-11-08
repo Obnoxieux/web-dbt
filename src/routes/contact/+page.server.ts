@@ -1,5 +1,5 @@
 import type {Actions} from "@sveltejs/kit";
-import {MailService} from "$lib/classes/MailService";
+import {MailService} from "$lib/server/classes/MailService";
 import {fail} from "@sveltejs/kit";
 
 

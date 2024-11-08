@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
-import {SMTP_MAIL_TO_ADDRESS, SMTP_PASS, SMTP_PORT, SMTP_SERVER, SMTP_USER} from "$env/static/private";
+import {env} from "$env/dynamic/private";
 import type {ContactEmail} from "$lib/model/ContactEmail";
 import validator from 'validator';
-import escape = validator.escape;
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 
 export class MailService {
-    readonly #FROM_ADDRESS = 'Webmaster dbt <webmaster@davidbattefeld.de>'
+    private readonly FROM_ADDRESS = 'Webmaster dbt <webmaster@davidbattefeld.de>'
 
     /**
      * @throws Error
@@ -33,30 +33,35 @@ export class MailService {
         }
 
         return <ContactEmail> {
-            fromName: escape(name),
-            email: validator.normalizeEmail(escape(email)),
-            reason: escape(<string>reason),
-            message: escape(message)
+            fromName: validator.escape(name),
+            email: validator.normalizeEmail(validator.escape(email)),
+            reason: validator.escape(<string>reason),
+            message: validator.escape(message)
         }
     }
 
     async sendEmail(data: FormData) {
         const contactEmail = this.validateAndSanitizeInput(data)
 
-        const transporter = nodemailer.createTransport({
-            host: SMTP_SERVER,
-            port: parseInt(SMTP_PORT),
-            secure: true,
-            auth: {
-                user: SMTP_USER,
-                pass: SMTP_PASS,
+        const options: SMTPTransport.Options = {
+            host: env.SMTP_SERVER,
+            port: parseInt(env.SMTP_PORT),
+        }
+
+        // local testing (sendmail/Mailpit) does not use auth
+        if (env.SMTP_USER && env.SMTP_PASS) {
+            options.secure = true
+            options.auth = {
+                user: env.SMTP_USER,
+                pass: env.SMTP_PASS,
             }
-        })
+        }
+        const transporter = nodemailer.createTransport(options)
 
         await transporter.sendMail({
-            from: this.#FROM_ADDRESS,
+            from: this.FROM_ADDRESS,
             replyTo: contactEmail.email,
-            to: SMTP_MAIL_TO_ADDRESS,
+            to: env.SMTP_MAIL_TO_ADDRESS,
             subject: "New email via web-dbt",
             text: `From: ${contactEmail.fromName}/${contactEmail.email}, reason: ${contactEmail.reason}. 
             Body text:\n\n ${contactEmail.message}`
