@@ -1,9 +1,16 @@
 {
-  "name": "web-dbt-cms",
+  "name": "web-dbt-payload",
   "version": "1.0.0",
   "description": "A blank template to get started with Payload 3.0",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
@@ -17,12 +24,11 @@
   "dependencies": {
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/next": "latest",
-    "@payloadcms/payload-cloud": "latest",
     "@payloadcms/richtext-lexical": "latest",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.1.5",
-    "payload": "latest",
+    "payload": "3.21.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "sharp": "0.32.6"
