@@ -1,0 +1,13 @@
+services:
+  mongodb_web_dbt:
+    image: mongo:6.0
+    container_name: mongodb_web_dbt
+    ports:
+      - "27017:27017" # Expose MongoDB on localhost
+    environment:
+      MONGO_INITDB_DATABASE: web-dbt-cms # Initializes the database on first run
+    volumes:
+      - mongodb_data:/data/db # Persist data
+
+volumes:
+  mongodb_data:
