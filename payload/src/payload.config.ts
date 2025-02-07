@@ -23,6 +23,28 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      description: "Where Bits and Bytes are assembled",
+      icons: [
+        {
+          type: 'image/png',
+          rel: 'icon',
+          url: '/assets/favicon.svg',
+        },
+      ],
+      openGraph: {
+        description: "Where Bits and Bytes are assembled",
+        images: [
+          {
+            height: 192,
+            url: '/assets/touch-icon.png',
+            width: 192,
+          },
+        ]
+      },
+      title: "web-dbt Admin Panel",
+      titleSuffix: "- web-dbt Admin"
+    }
   },
   collections: [Users, Media, Pages, Posts],
   globals: [Header, Footer],
