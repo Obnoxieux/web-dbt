@@ -6,8 +6,8 @@
 
     let lang: any = $state(languages.typescript)
 
-    function handleMessage(event: { detail: { language: Language; }; }) {
-        switch (event.detail.language) {
+    function callback(language: Language) {
+        switch (language) {
             case Language.typescript:
                 lang = languages.typescript
                 break
@@ -30,7 +30,7 @@
             <div>
                 <h2 class="card-title">Languages</h2>
                 <p class="my-3">that I use and sometimes love</p>
-                <CodeTabs on:message={handleMessage}/>
+                <CodeTabs {callback}/>
             </div> 
             <CodeBlock lang={lang}/>
         </div>

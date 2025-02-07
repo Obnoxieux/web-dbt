@@ -1,16 +1,17 @@
 <script lang="ts">
   import {Language} from "$lib/enums/Language";
-  import {createEventDispatcher} from "svelte";
 
-  const dispatch = createEventDispatcher()
+  interface Props {
+    callback: (language: Language) => void
+  }
+  let {callback}: Props = $props()
+
   let activeTab = $state(Language.typescript)
 
   function changeLanguage(language: Language) {
     activeTab = language
 
-    dispatch('message', {
-      language: language
-    })
+    callback(language)
   }
 </script>
 
