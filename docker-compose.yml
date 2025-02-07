@@ -1,7 +1,27 @@
 services:
-  app:
+  backend:
+    image: obnoxieux/web-dbt-cms:latest
+    restart: unless-stopped
+    depends_on:
+      - database
+    networks:
+      - proxy
+      - db-isolated
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.web-dbt-cms.rule=Host(`cms.obnx.dev`)"
+      - "traefik.http.routers.web-dbt-cms.entrypoints=websecure"
+      - "traefik.http.routers.web-dbt-cms.tls.certresolver=letsEncrypt"
+    environment:
+      - "DATABASE_URI=${DATABASE_URI}"
+      - "PAYLOAD_SECRET=${PAYLOAD_SECRET}"
+      - "NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}"
+
+  frontend:
     image: obnoxieux/web-dbt:latest
     restart: unless-stopped
+    depends_on:
+      - backend
     networks:
       - proxy
     labels:
@@ -23,7 +43,25 @@ services:
       - "PUBLIC_CONTACT_PHONE=${PUBLIC_CONTACT_PHONE}"
       - "PUBLIC_CONTACT_ADDRESS=${PUBLIC_CONTACT_ADDRESS}"
 
+  database:
+    image: mongo:8.0
+    restart: always
+    command:
+      - --storageEngine=wiredTiger
+    environment:
+      - "MONGO_INITDB_DATABASE=web-dbt-cms"
+      - "MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}"
+      - "MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - db-isolated
+
 
 networks:
   proxy:
     external: true
+  db-isolated:
+
+volumes:
+  mongodb_data:
