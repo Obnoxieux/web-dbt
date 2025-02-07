@@ -1,6 +1,6 @@
-import type { GlobalConfig } from 'payload'
+import type {GlobalConfig} from 'payload';
 
-import { link } from '@/fields/link'
+import {link} from '@/fields/link';
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
@@ -10,10 +10,11 @@ export const Footer: GlobalConfig = {
   fields: [
     {
       name: "infotext",
-      type: "text",
+      type: "code",
       maxLength: 255,
       admin: {
-        description: "Appears on leading edge",
+        description: "Appears on leading edge. HTML is supported, but can be plain string.",
+        language: "html",
       }
     },
     {
@@ -33,4 +34,4 @@ export const Footer: GlobalConfig = {
       },
     },
   ],
-}
+};

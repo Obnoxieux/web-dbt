@@ -674,7 +674,7 @@ export interface Header {
 export interface Footer {
   id: string;
   /**
-   * Appears on leading edge
+   * Appears on leading edge. HTML is supported, but can be plain string.
    */
   infotext?: string | null;
   navItems?:
