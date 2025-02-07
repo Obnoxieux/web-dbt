@@ -13,6 +13,8 @@ import {defaultLexical} from "@/fields/defaultLexical";
 import {plugins} from "@/plugins";
 import {Header} from "@/globals/Header/config";
 import {Footer} from "@/globals/Footer/config";
+import {nodemailerAdapter} from "@payloadcms/email-nodemailer";
+import * as process from "node:process";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -51,6 +53,18 @@ export default buildConfig({
   editor: defaultLexical,
   secret: process.env.PAYLOAD_SECRET || '',
   cors: "*",
+  email: nodemailerAdapter({
+    defaultFromAddress: "cms@obnx.dev",
+    defaultFromName: "web-dbt Admin",
+    transportOptions: {
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    }
+  }),
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
