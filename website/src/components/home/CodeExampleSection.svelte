@@ -3,8 +3,9 @@
     import CodeBlock from "./CodeBlock.svelte";
     import { Language } from "$lib/enums/Language";
     import { languages } from "$lib/codeSamples";
+    import type {LanguageItem} from "$lib/model/LanguageItem";
 
-    let lang: any = $state(languages.typescript)
+    let lang: LanguageItem = $state(languages.typescript)
 
     function callback(language: Language) {
         switch (language) {

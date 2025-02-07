@@ -4,8 +4,13 @@
   import {languages} from "$lib/codeSamples";
   import {cubicIn} from "svelte/easing";
   import {fly} from 'svelte/transition';
+  import type {LanguageItem} from "$lib/model/LanguageItem";
 
-  let {lang = languages.typescript} = $props();
+  interface Props {
+    lang: LanguageItem,
+  }
+
+  let {lang = languages.typescript}: Props = $props();
 </script>
 
 <svelte:head>
