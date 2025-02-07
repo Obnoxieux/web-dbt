@@ -22,9 +22,11 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "latest",
-    "@payloadcms/next": "latest",
-    "@payloadcms/richtext-lexical": "latest",
+    "@payloadcms/db-mongodb": "3.21.0",
+    "@payloadcms/next": "3.21.0",
+    "@payloadcms/plugin-seo": "^3.21.0",
+    "@payloadcms/richtext-lexical": "3.21.0",
+    "@payloadcms/ui": "^3.21.0",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.1.5",
