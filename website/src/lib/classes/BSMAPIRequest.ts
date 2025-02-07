@@ -20,9 +20,9 @@ export class BSMAPIRequest extends AbstractAPIRequest {
     }
 
     async loadPersonalStatistics(statsType: StatsType, season?: number): Promise<AbstractStatisticsEntry> {
-        const url = this.buildURL(statsType, season)
-        const response = await this.fetchJSONData(url, undefined)
+        const url = this.buildURL(statsType, season);
+        const response = await this.fetchJSONData<AbstractStatisticsEntry>(url, undefined);
 
-        return response as AbstractStatisticsEntry
+        return response;
     }
 }

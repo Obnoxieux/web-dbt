@@ -23,19 +23,19 @@ export class GitHubAPIRequest extends AbstractAPIRequest {
         }
     }
 
-    async loadRepositoriesForUser(username: string, resource: string): Promise<[GitHubRepo]> {
+    async loadRepositoriesForUser(username: string, resource: string): Promise<GitHubRepo[]> {
         const url = this.buildURL(username, resource)
         const requestOptions = this.setRequestOptions()
 
-        const response = await this.fetchJSONData(url, requestOptions)
-        return response as [GitHubRepo]
+        const response = await this.fetchJSONData<GitHubRepo[]>(url, requestOptions);
+        return response;
     }
 
     async loadSingleRepository(owner: string, resource: string, id: string): Promise<GitHubRepo> {
         const url = this.buildURL(owner, resource, id)
         const requestOptions = this.setRequestOptions()
 
-        const response = await this.fetchJSONData(url, requestOptions)
-        return response as GitHubRepo
+        const response = await this.fetchJSONData<GitHubRepo>(url, requestOptions)
+        return response;
     }
 }
