@@ -15,6 +15,7 @@ import {Header} from "@/globals/Header/config";
 import {Footer} from "@/globals/Footer/config";
 import {nodemailerAdapter} from "@payloadcms/email-nodemailer";
 import * as process from "node:process";
+import {CodeBlocks} from "@/collections/CodeBlocks";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -48,7 +49,7 @@ export default buildConfig({
       titleSuffix: "- web-dbt Admin"
     }
   },
-  collections: [Users, Media, Pages, Posts],
+  collections: [Users, Media, Pages, Posts, CodeBlocks],
   globals: [Header, Footer],
   editor: defaultLexical,
   secret: process.env.PAYLOAD_SECRET || '',
