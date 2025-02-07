@@ -50,6 +50,7 @@ export default buildConfig({
   globals: [Header, Footer],
   editor: defaultLexical,
   secret: process.env.PAYLOAD_SECRET || '',
+  cors: "*",
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },

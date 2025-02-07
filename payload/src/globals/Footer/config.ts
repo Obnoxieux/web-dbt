@@ -9,6 +9,14 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: "infotext",
+      type: "text",
+      maxLength: 255,
+      admin: {
+        description: "Appears on leading edge",
+      }
+    },
+    {
       name: 'navItems',
       type: 'array',
       fields: [
@@ -16,7 +24,7 @@ export const Footer: GlobalConfig = {
           appearances: false,
         }),
       ],
-      maxRows: 6,
+      maxRows: 4,
       admin: {
         initCollapsed: true,
         components: {
