@@ -12,6 +12,7 @@ services:
       - "traefik.http.routers.web-dbt-cms.rule=Host(`cms.obnx.dev`)"
       - "traefik.http.routers.web-dbt-cms.entrypoints=websecure"
       - "traefik.http.routers.web-dbt-cms.tls.certresolver=letsEncrypt"
+      - "traefik.docker.network=proxy"
     environment:
       - "DATABASE_URI=${DATABASE_URI}"
       - "PAYLOAD_SECRET=${PAYLOAD_SECRET}"
