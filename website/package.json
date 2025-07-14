@@ -21,6 +21,7 @@
 		"dotenv": "^16.6.1",
 		"nodemailer": "^6.10.1",
 		"postcss": "^8.5.6",
+		"qs-esm": "^7.0.2",
 		"svelte": "^5.36.0",
 		"svelte-check": "^4.2.2",
 		"svelte-highlight": "^7.8.3",

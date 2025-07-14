@@ -110,6 +110,9 @@ importers:
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
+      qs-esm:
+        specifier: ^7.0.2
+        version: 7.0.2
       svelte:
         specifier: ^5.36.0
         version: 5.36.0
