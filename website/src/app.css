@@ -2,6 +2,7 @@
 
 @plugin '@tailwindcss/typography';
 
+@plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
@@ -21,6 +22,7 @@
 
 @plugin "daisyui/theme" {
   name: "dark";
+  prefersdark: true;
   --color-primary: #ea580c;
   --color-primary-focus: #c2410c;
   --color-secondary: #34d399;

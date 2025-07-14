@@ -1,6 +1,6 @@
 import {OpenGraphDefaults} from '$lib/classes/OpenGraphDefaults';
 import type {MetaTagsProps} from 'svelte-meta-tags';
-import type {PageLoad} from "../../../.svelte-kit/types/src/routes/$types";
+import type {PageLoad} from "./$types";
 
 export const load: PageLoad = async ({ url, data }) => {
     const pageTitle = 'Personal'
