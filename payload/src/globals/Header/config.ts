@@ -1,11 +1,12 @@
 import type { GlobalConfig } from 'payload'
 
 import { link } from '@/fields/link'
+import {authenticatedOrPublished} from "@/access/authenticatedOrPublished";
 
 export const Header: GlobalConfig = {
   slug: 'header',
   access: {
-    read: () => true,
+    read: authenticatedOrPublished,
   },
   fields: [
     {
