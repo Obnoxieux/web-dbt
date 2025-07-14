@@ -1,6 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #c2410c;
+  --color-primary-focus: #9a3412;
+  --color-primary-content: #ffffff;
+  --color-secondary: #047857;
+  --color-secondary-focus: #065f46;
+  --color-secondary-content: #f3f4f6;
+  --color-accent: #2563eb;
+  --color-accent-focus: #1d4ed8;
+  --color-accent-content: #f3f4f6;
+  --color-warning: #d97706;
+  --color-warning-focus: #b45309;
+  --color-warning-content: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #ea580c;
+  --color-primary-focus: #c2410c;
+  --color-secondary: #34d399;
+  --color-secondary-focus: #10b981;
+  --color-secondary-content: #111827;
+  --color-accent: #3B82F6;
+  --color-accent-focus: #2563eb;
+  --color-accent-content: #f3f4f6;
+  --color-warning: #f59e0b;
+  --color-warning-focus: #d97706;
+  --color-warning-content: #111827;
+}
+
+@theme {
+  --color-swift: #3b82f6;
+  --color-kotlin: #34d399;
+  --color-typescript: #ea580c;
+  --color-php: #f59e0b;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
 	/* Tailwind Blue-500 */
