@@ -1,4 +1,8 @@
 ## web-dbt
+
+> [!WARNING]
+> This is the original version of my personal website, it is archived for reference.
+
 by [this guy aka me](https://github.com/Obnoxieux)
 
 ## Project description
