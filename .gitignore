@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
-/build
-/.svelte-kit
+/website/build
+/website/.svelte-kit
 /package
 .env
 !.env.example
@@ -48,3 +48,4 @@ Temporary Items
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+/payload/.next/

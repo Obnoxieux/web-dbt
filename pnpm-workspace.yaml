@@ -1,0 +1,5 @@
+packages:
+  - payload
+  - website
+onlyBuiltDependencies:
+  - sharp

@@ -1,0 +1,29 @@
+$primary: #02cc01;
+
+.btn {
+  background: $primary;
+  color: black;
+}
+
+.btn.btn--style-none, .btn.btn--icon {
+  color: unset;
+  background: unset;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.nav {
+  border-right: 1px solid $primary;
+}
+
+html[data-theme='dark'] {
+  .nav-group__label {
+    color: $primary;
+  }
+
+  .doc-controls__label {
+    color: $primary;
+  }
+}
